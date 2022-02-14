@@ -145,12 +145,12 @@ html,body{
     .logo{
         color: #fff;
         cursor: default;
-        font-size: 15px;
+        font-size: 12px;
     }
     
     .main-list li a{
         color: #fff;
-        font-size: 15px;
+        font-size: 13px;
         padding: 0 7px;
     }
      
@@ -173,7 +173,6 @@ html,body{
     
     .banner-photo img{
       height: 400px;
-      margin-top: 12px;
       border-radius: 12px;
       background-position: center;
       background-repeat: no-repeat;
