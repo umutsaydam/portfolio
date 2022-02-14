@@ -88,14 +88,6 @@ html,body{
     padding-top: 60px;
 }
 
-.personal-text p{
-    font-family: "Roboto",sans-serif;
-    color: #7777;
-    margin-bottom: 40px;
-    width: 400px;
- 
-}
-
 .progress{
     background-color: #e8e8e8;
     border:1px solid #e9ecef;
@@ -191,6 +183,13 @@ html,body{
         height: 600px;
         width: 400px;
         padding-left: 5%;
+    }
+
+    .personal-text p{
+        font-family: "Roboto",sans-serif;
+        color: #7777;
+        margin-bottom: 40px;
+        width: 300px;
     }
     
     .info{
@@ -449,6 +448,13 @@ html,body{
         width: 500px;
         padding-left: 5%;
     }
+
+    .personal-text p{
+        font-family: "Roboto",sans-serif;
+        color: #7777;
+        margin-bottom: 40px;
+        width: 400px;
+    }
     
     .info{
         display: flex;
@@ -702,6 +708,13 @@ html,body{
         height: 600px;
         width: 500px;
         padding-left: 5%;
+    }
+
+    .personal-text p{
+        font-family: "Roboto",sans-serif;
+        color: #7777;
+        margin-bottom: 40px;
+        width: 400px;
     }
     
     .info{
@@ -958,6 +971,13 @@ html,body{
         height: 600px;
         width: 500px;
         padding-left: 20%;
+    }
+
+    .personal-text p{
+        font-family: "Roboto",sans-serif;
+        color: #7777;
+        margin-bottom: 40px;
+        width: 400px;
     }
     
     .info{
@@ -1218,6 +1238,13 @@ html,body{
 
 .personal-text {
     height: 600px;
+}
+
+.personal-text p{
+    font-family: "Roboto",sans-serif;
+    color: #7777;
+    margin-bottom: 40px;
+    width: 300px;
 }
 
 .info{
