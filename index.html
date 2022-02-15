@@ -11,23 +11,25 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body id="Main">
 
     <header class="header col-12">
-        <h2 class="logo col-3" translate="no"> <span id="shape1">
-                < </span> Umut SAYDAM <span id="shape2">/></span> </h2>
+        <h2 class="logo col-3" translate="no">
+            <a href="#Main"> <span id="shape1">
+                    < </span> Umut SAYDAM <span id="shape2">/></span> </a>
+        </h2>
         <nav class="menu col-9">
             <ul class="main-list">
-                <li class="list-item"><a href="">Anasayfa</a></li>
-                <li class="list-item"><a href="">Hakkımda</a></li>
-                <li class="list-item"><a href="">Portfolyo</a></li>
-                <li class="list-item"><a href="">İletişim</a></li>
+                <li class="list-item"><a href="#Anasayfa">Anasayfa</a></li>
+                <li class="list-item"><a href="#Hakkimda">Hakkımda</a></li>
+                <li class="list-item"><a href="#Portfolyo">Portfolyo</a></li>
+                <li class="list-item"><a href="#Iletisim">İletişim</a></li>
             </ul>
         </nav>
     </header>
 
     <section class="home-area col-12">
-        <div class="container box col-9">
+        <div class="container box col-9" id="Anasayfa">
             <div class="banner-photo col-5">
                 <img src="Img/ben.png" alt="">
             </div>
@@ -35,9 +37,9 @@
                 <h6>Merhaba, Ben</h6>
                 <h3 translate="no">Umut SAYDAM</h3>
                 <h4>Junior Web Devoloper</h4>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit sed purus in dapibus. Nulla
-                    lacinia, tellus vel dapibus placerat, lectus dui dictum eros, nec mollis massa tortor vel ipsum.
+                <p id="Iletisim">
+                    Bilgisayar Mühendisliği 2. Sınıf öğrencisi olarak her gün yeni şeyler öğrenmeyi amaçlayan ve eldeki
+                    imkanlarla sorun çözmekten zevk alan bu sektörde yer edinmeyi amaçlayan meraklı biriyim.
                 </p>
 
                 <div class="info col-12">
@@ -57,9 +59,10 @@
                     </ul>
 
                     <ul class="list social-media col-6s">
-                        <li><a href=""><i class="fab fa-github"></i></a></li>
+                        <li><a href="https://github.com/umutsaydam"><i class="fab fa-github"></i></a></li>
                         <li><a href=""><i class="fab fa-linkedin-in"></i></a></li>
-                        <li><a href=""><i class="fab fa-instagram"></i></a></i></li>
+                        <li><a href="https://www.instagram.com/umut.saydm/"><i class="fab fa-instagram"></i></a></i>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -67,52 +70,19 @@
     </section>
 
     <section class="about-me col-12">
-        <div class="container col-9">
+        <div class="container col-9" id="Hakkimda">
             <div class="about-me-text">
                 <div class="col-6 abt">
                     <div class="welcome-text">
                         <h4>Kendim Hakkında</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit sed purus in dapibus.
-                            Nulla lacinia, tellus vel dapibus placerat, lectus dui dictum eros, nec mollis massa tortor
-                            vel ipsum.</p>
+                        <p>2000 yılında Adana'da doğdum küçüklükten beri bilgisayarda oyun oynayan daha sonra yazılama
+                            merak salıp tamamen bu alana yönelmeyi hedefledim.</p>
                     </div>
                 </div>
                 <div class="col-6 abt">
                     <div class="skill-main">
                         <div class="skill-item col-11 abt">
-                            <h4>After Effect</h4>
-                            <div class="progress">
-                                <div class="progress-bar col-4"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill-main">
-                        <div class="skill-item col-11 abt">
-                            <h4>After Effect</h4>
-                            <div class="progress">
-                                <div class="progress-bar col-6"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill-main">
-                        <div class="skill-item col-11 abt">
-                            <h4>After Effect</h4>
-                            <div class="progress">
-                                <div class="progress-bar col-7"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill-main">
-                        <div class="skill-item col-11 abt">
-                            <h4>After Effect</h4>
-                            <div class="progress">
-                                <div class="progress-bar col-2"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill-main">
-                        <div class="skill-item col-11 abt">
-                            <h4>After Effect</h4>
+                            <h4>Java</h4>
                             <div class="progress">
                                 <div class="progress-bar col-5"></div>
                             </div>
@@ -120,17 +90,49 @@
                     </div>
                     <div class="skill-main">
                         <div class="skill-item col-11 abt">
-                            <h4>After Effect</h4>
+                            <h4>HTML</h4>
                             <div class="progress">
-                                <div class="progress-bar col-8"></div>
+                                <div class="progress-bar col-7"></div>
                             </div>
                         </div>
                     </div>
                     <div class="skill-main">
                         <div class="skill-item col-11 abt">
-                            <h4>After Effect</h4>
+                            <h4>CSS</h4>
                             <div class="progress">
-                                <div class="progress-bar col-9"></div>
+                                <div class="progress-bar col-6"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-main">
+                        <div class="skill-item col-11 abt">
+                            <h4>Javascript</h4>
+                            <div class="progress">
+                                <div class="progress-bar col-5"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-main">
+                        <div class="skill-item col-11 abt">
+                            <h4>Php</h4>
+                            <div class="progress">
+                                <div class="progress-bar col-2"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-main">
+                        <div class="skill-item col-11 abt">
+                            <h4>MySQL</h4>
+                            <div class="progress">
+                                <div class="progress-bar col-2"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-main">
+                        <div class="skill-item col-11 abt">
+                            <h4>Unity</h4>
+                            <div class="progress">
+                                <div class="progress-bar col-1"></div>
                             </div>
                         </div>
                     </div>
@@ -139,7 +141,7 @@
         </div>
     </section>
 
-    <section class="slider col-12">
+    <section class="slider col-12" id="Portfolyo">
         <h3>Portfolyom</h3>
         <div id="back">
             <i class="far fa-arrow-alt-circle-left"></i>
@@ -173,17 +175,16 @@
             <div class="boxes col-4">
                 <h3>Kısaca</h3>
                 <p>
-                    Do you want to be even more successful? Learn to love learning and growth. The more effort you put
-                    into improving your skills,
+                    Öğrenme konusunda disiplinli ve hevesli bir performans sergileyen ve sorun çözmeyi aşırı severim.
                 </p>
                 <br>
                 <p>
-                    Copyright ©2022 All rights reserved | This template is made with by Colorlib
+                    Copyright ©2022 All rights reserved | Umut SAYDAM
                 </p>
             </div>
             <div class="boxes col-4">
                 <h3>Bana Ulaş !</h3>
-                <p>Stay updated with our latest trends</p>
+                <p>Devre Dışı!</p>
                 <input class="btn-mail col-9" type="email" name="" id="" placeholder="Email Adresi">
                 <button class="send-btn col-2">
                     <i class="fa-solid fa-arrow-right"></i>
