@@ -10,6 +10,7 @@
 }
 html,body{
     height: 100%;
+    scroll-behavior: smooth;
 }
 .col-1  {width: 8.33%;	}
 .col-2  {width: 16.66%;	}
@@ -24,15 +25,17 @@ html,body{
 .col-11 {width: 91.66%;	}
 .col-12 {width: 100%;	} 
 
-/* 120 70 navbar height*/
 .header{
-    height: 120px;
     position: fixed;
     z-index: 99;
     background-image: -webkit-linear-gradient(0deg,#766dff 0%,#88f3ff 100%);
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.logo a{
+    color: #fff;
 }
 
 .logo #shape1, #shape2{
@@ -144,7 +147,7 @@ html,body{
     
     .logo{
         color: #fff;
-        cursor: default;
+        cursor: pointer;
         font-size: 12px;
     }
     
@@ -394,8 +397,8 @@ html,body{
     }
     
     
-    /* Small devices (portrait tablets and large phones, 600px and up) */
-    @media only screen and (min-width: 600px) and (max-width: 768) { 
+/* Small devices (portrait tablets and large phones, 600px and up) */
+ @media only screen and (min-width: 600px) and (max-width: 768) { 
         
     .header{
         padding: 0 20px;
@@ -653,10 +656,10 @@ html,body{
         padding: 12px;
         font-size: 25px;
     }
-    }
+}
     
-    /* Medium devices (landscape tablets, 768px and up) */
-    @media only screen and (min-width: 768px) and (max-width: 992) { 
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 992) { 
             
     .header{
         padding: 0 20px;
@@ -916,10 +919,10 @@ html,body{
         padding: 12px;
         font-size: 25px;
     }
-    }
+}
     
-    /* Large devices (laptops/desktops, 992px and up) */
-    @media only screen and (min-width: 992px) and (max-width: 1200px) { 
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) and (max-width: 1200px) { 
                
     .header{
         padding: 0 20px;
@@ -928,7 +931,7 @@ html,body{
     
     .logo{
         color: #fff;
-        cursor: default;
+        cursor: pointer;
         font-size: 17px;
     }
     
@@ -1179,7 +1182,7 @@ html,body{
         padding: 12px;
         font-size: 25px;
     }
-    }
+}
 
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -1187,12 +1190,12 @@ html,body{
                
 .header{
     padding: 0 20px;
-    height: 60px;
+    height: 120px;
 }
 
 .logo{
     color: #fff;
-    cursor: default;
+    cursor: pointer;
     font-size: 25px;
 }
 
@@ -1242,7 +1245,7 @@ html,body{
     font-family: "Roboto",sans-serif;
     color: #7777;
     margin-bottom: 40px;
-    width: 300px;
+    padding: 0 180px 0 0;
 }
 
 .info{
