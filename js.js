@@ -53,5 +53,19 @@ back.addEventListener("mouseover", () => {
     clearTimeout(timer);
 })
 
+/* Onscrool */
+
+function scroolFunction() {
+    if (document.body.scroolTop > 90 || document.documentElement.scrollTop > 90) {
+        document.querySelector(".header").style.transition = 0.5 + "s all ease-out";
+        document.querySelector(".header").style.height = 70 + "px";
+    } else {
+        document.querySelector(".header").style.height = 120 + "px";
+    }
+}
+
+window.onscroll = function () { scroolFunction(); };
+
+
 
 
