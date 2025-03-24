@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umut SAYDAM - Software Developer</title>
+    <style>
+        :root {
+            --primary-color: #4a6fa5;
+            --secondary-color: #166088;
+            --accent-color: #4fc3dc;
+            --dark-color: #333;
+            --light-color: #f4f4f8;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: var(--light-color);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            background-image:
+                radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.3) 0%, transparent 20%),
+                radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.3) 0%, transparent 20%);
+        }
+
+        nav {
+            background-color: white;
+            box-shadow: var(--box-shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: var(--dark-color);
+        }
+
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .about-img {
+            flex: 1;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: var(--box-shadow);
+        }
+
+        .about-text {
+            flex: 2;
+        }
+
+        .skills {
+            margin-top: 2rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .skill-tag {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+        }
+
+        .projects {
+            background-color: #fafafa;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .project-tag {
+            background-color: rgba(74, 111, 165, 0.1);
+            color: var(--primary-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 25px;
+            font-size: 0.8rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .project-link {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .project-link:hover {
+            color: var(--accent-color);
+        }
+
+        .resume {
+            background-color: rgba(74, 111, 165, 0.05);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 3px;
+            background-color: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1.5px;
+        }
+
+        .timeline-item {
+            padding: 10px 35px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 4px solid var(--accent-color);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(odd)::after {
+            right: -10px;
+        }
+
+        .timeline-item:nth-child(even)::after {
+            left: -10px;
+        }
+
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: var(--box-shadow);
+        }
+
+        .timeline-date {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            color: white;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .social-link {
+            color: white;
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .social-link:hover {
+            transform: translateY(-5px);
+        }
+
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+
+            .timeline-item::after {
+                left: 21px;
+            }
+
+            .timeline-item:nth-child(odd)::after {
+                right: auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                gap: 0;
+                flex-direction: column;
+                background-color: white;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                margin: 16px 0;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-bg"></div>
+        <div class="header-content">
+            <h1>Umut SAYDAM</h1>
+            <p>Computer Engineer | Android & Backend Developer</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="#about">Hakkımda</a></li>
+                <li><a href="#projects">Portfolyo</a></li>
+                <li><a href="#resume">Kariyerim</a></li>
+                <li><a href="#contact">İletişim</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Hakkımda</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="img/me.jpg" alt="Your Profile" class="profile-img">
+                </div>
+                <div class="about-text">
+                    <h3>Merhaba, Ben Umut</h3>
+                    <p> Mobil uygulama geliştirmeye derin bir ilgi duyuyorum ve sürekli gelişime kendimi adamış
+                        durumdayım. En son teknolojilerle güncel kalarak, projelerimin hem yenilikçi hem de etkili
+                        olmasını sağlıyorum. Android uygulama geliştirme konusunda güçlü bir deneyime sahibim ve verimli
+                        çözümler üretme konusunda başarılıyım. İşbirlikçi bir yapıya sahip, güçlü analitik becerilere
+                        sahibim ve yeni bilgiler edinmeye hevesli biriyim.
+                    <p>
+
+                    <div class="skills">
+                        <h3>Technical Skills</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Kotlin</span>
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">Android Studio</span>
+                            <span class="skill-tag">Spring Boot</span>
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">PHP</span>
+                            <span class="skill-tag">GIT</span>
+                            <span class="skill-tag">AWS</span>
+                        </div>
+                    </div>
+                    <div class="social-icons">
+                        <a href="https://github.com/umutsaydam" class="social-link"><i class="fab fa-github"
+                                style="color: var(--primary-color);"></i></a>
+                        <a href="https://www.linkedin.com/in/umutsaydam/" class="social-link"><i class="fab fa-linkedin"
+                                style="color: var(--primary-color);"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-title">
+                <h2>Portfolyo</h2>
+            </div>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <img src="img/zenfocus_app_icon.png" alt="Project 1" class="project-img">
+                    <div class="project-content">
+                        <h3>ZenFocus</h3>
+                        <p>ZenFocus ile üretkenliğinizi en üst seviyeye taşıyın! Pomodoro tekniği ve yapılacaklar
+                            listesiyle zamanınızı etkili bir şekilde yönetin. Kullanıcı dostu ara yüzüyle odaklanma
+                            deneyiminizi kişiselleştirin: istediğiniz temayı seçerek tam odak modunu aktif hale getirin
+                            ve motivasyonunuzu artırın.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Android</span>
+                            <span class="project-tag">Kotlin</span>
+                            <span class="project-tag">Jetpack Compose</span>
+                            <span class="project-tag">Dagger-Hilt</span>
+                            <span class="project-tag">Coroutines</span>
+                            <span class="project-tag">Google Billing</span>
+                            <span class="project-tag"">Google Mobile Ads SDK</span>
+                            <span class=" project-tag">AWS</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/umutsaydam/ZenFocus" class="project-link">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                            <a href="https://play.google.com/store/apps/details?id=com.umutsaydam.zenfocus"
+                                class="project-link">
+                                <i class="fa-brands fa-google-play"></i> Google Play
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <img src="img/binotat_app_icon.webp" alt="Project 2" class="project-img">
+                    <div class="project-content">
+                        <h3>Binotat</h3>
+                        <p>5000'in üzerinde indirme sayısına ve artan bir aktif kullanıcı kitlesine sahip olan uygulama,
+                            üniversite öğrencilerinin ders notlarını verimli bir şekilde paylaşmalarını ve kategorize
+                            etmelerini sağlar.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Kotlin</span>
+                            <span class="project-tag">Android Studio</span>
+                            <span class="project-tag">Retrofit2</span>
+                            <span class="project-tag">PHP</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.binotatapp.binotat"
+                                class="project-link">
+                                <i class="fa-brands fa-google-play"></i> Google Play
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <img src="img/todo_app_icon.webp" alt="Project 3" class="project-img">
+                    <div class="project-content">
+                        <h3>ToDoApp -Organize your life</h3>
+                        <p>Bugün, yarın ve daha sonra başlıklar altında ayrılmış bir şekilde yapılacaklar listesi
+                            oluşturun ve özel olarak meydan okuma özelliği ile kendinize meydan okuyup kendiniz
+                            geliştirin. Meydan okuma sonucunda başardığınız meydan okumalar istatistiksel verilere
+                            dayanarak bir grafik üzerinde inceleyin.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Java</span>
+                            <span class="project-tag">Android Studio</span>
+                            <span class="project-tag">Firebase</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/umutsaydam/ToDoAndroidApp" class="project-link">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                            <a href="https://play.google.com/store/apps/details?id=com.mytodoapp.todoapp"
+                                class="project-link">
+                                <i class="fa-brands fa-google-play"></i> Google Play
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <img src="img/home_img.png" alt="Project 3" class="project-img">
+                    <div class="project-content">
+                        <h3>Durmazoğlu Ticaret Maliye Takip Sistemi</h3>
+                        <p>Envanter stok takibi, müşteri alacak-verecek hesabı, müşteri bakiye takibi ve uyarı sistemi.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">C#</span>
+                            <span class="project-tag">MSSQL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="resume" class="resume">
+        <div class="container">
+            <div class="section-title">
+                <h2>Resume</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2025 - Halen</div>
+                        <h3>Yeni Fırsatlar Arayışında!</h3>
+                        <p>Yazılım geliştirme alanındaki becerilerimi kullanabileceğim ve yenilikçi projelere katkıda
+                            bulunabileceğim bir pozisyon arıyorum.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Temmuz 2024 - Ağustos 2024</div>
+                        <h3>Narveri Eğitim Bilişim</h3>
+                        <p>Mobile Application Development Intern</p>
+                        <hr>
+                        <p>
+                            - Eğitici Video Klipleri, Piri Keşif Aracı ve SOBIAD mobil uygulamalarının
+                            geliştirilmesinden
+                            sorumlu.
+                        </p>
+                        <p>
+                            - Modern, erişilebilir ve kullanıcı odaklı ara yüz tasarımları tasarlandı ve uygulandı.
+                        </p>
+                        <p>
+                            - 8 ek dilin desteklenmesine katkıda bulundu ve sorunsuz veri senkronizasyonunu sağladı.
+                        </p>
+                        <p>- Hata ayıklama ve kodun yeniden düzenlemesi ile uygulama performansı %32 oranında
+                            optimize
+                            edildi.</p>
+                        <p>
+                            - Toplamda 11 güncelleme yapıldı ve dijital mağazalarda yayımlandı.
+                        </p>
+                        <p>
+                            - Kullanılan Teknolojiler: Android Studio, Flutter, çeşitli Flutter kütüphaneleri,
+                            Postman.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Temmuz 2024 - Ağustos 2024</div>
+                        <h3>AltF4 Yazılım</h3>
+                        <p>Android Mobile Developer Intern</p>
+                        <hr>
+                        <p>
+                            - UstaPos Halı Yıkama Sistemi uygulaması için sürüm güncellemeleri gerçekleştirildi.
+                        </p>
+                        <p>
+                            - Backend mantıksal hataları tespit edildi ve daha kullanıcı dostu bir deneyim için frontend
+                            iyileştirildi.
+                        </p>
+                        <p>
+                            - Kullanılan Teknolojiler: Android Studio, Java, PHP, Postman, MySQL
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Bana Ulaşın</h2>
+            </div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope contact-icon"></i>
+                    <p>umutsaydam24@gmail.com</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt contact-icon"></i>
+                    <p>Adana, Türkiye</p>
+                </div>
+            </div>
+            <div class="social-icons">
+                <a href="https://github.com/umutsaydam" class="social-link"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/umutsaydam/" class="social-link"><i
+                        class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Umut SAYDAM. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Mobile navigation toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking on links
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section-title, .about-content, .project-card, .timeline-item, .contact-info').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+
+</html>
